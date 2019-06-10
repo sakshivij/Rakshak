@@ -9,4 +9,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+    updateTextButton.setOnClickListener { welcomeTextView.text = "Hello Kotlin World!" }
+
 }
