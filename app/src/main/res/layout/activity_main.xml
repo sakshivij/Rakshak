@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Account Login"/>
+        android:text="Account Login"
+        android:layout_gravity="center"
+    />
 
     <EditText
             android:id="@+id/email"
@@ -29,12 +32,21 @@
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Login"/>
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_gravity="center"
+    />
 
     <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone" />
+    <TextView
+            android:text="Not Registered Yet?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/register"
+            android:layout_gravity="center"
+            android:textColor="@android:color/holo_red_dark"/>
 </LinearLayout>

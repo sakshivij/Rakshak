@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "433572046942",
+    "firebase_url": "https://rakshak-d09fc.firebaseio.com",
+    "project_id": "rakshak-d09fc",
+    "storage_bucket": "rakshak-d09fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:433572046942:android:2b890619d330f5e9",
+        "android_client_info": {
+          "package_name": "com.example.rakshak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "433572046942-qnk29j6i1v95sj5u18ulphuimk8d4l2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWKkd1pLGhUfg3gV9IgnR7ZWXGPHkOsgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "433572046942-qnk29j6i1v95sj5u18ulphuimk8d4l2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
