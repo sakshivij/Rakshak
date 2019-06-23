@@ -1,6 +1,5 @@
 package com.example.rakshak
 
-import android.R
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +22,7 @@ class ContactAdapter(private val contactlist: ArrayList<Contact>) : RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.contactList, parent, false)
+            .inflate(R.layout.contactlistofuser, parent, false)
 
         return MyViewHolder(itemView)
     }

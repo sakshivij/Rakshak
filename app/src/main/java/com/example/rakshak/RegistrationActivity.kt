@@ -12,25 +12,36 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.example.rakshak.R
 import android.util.Log
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class RegistrationActivity : AppCompatActivity() {
     private var emailTV: EditText? = null
     private var passwordTV: EditText? = null
+    private var phnumber : EditText? = null
+    private var uname : EditText? = null
+    private var bloodgroup : EditText? = null
+
     private var regBtn: Button? = null
     private var progressBar: ProgressBar? = null
-
     private var mAuth: FirebaseAuth? = null
-
+    private var mDatabase : FirebaseDatabase? = null
+    private var mDatabaseReference : FirebaseDatabase? = null
+    private var dataList : HashMap<String,String>? = null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registartion)
 
         mAuth = FirebaseAuth.getInstance()
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+        mDatabase = FirebaseDatabase.getInstance()
+
         Log.v(null,"Auth variable"+mAuth);
         initializeUI()
-
         regBtn!!.setOnClickListener { registerNewUser() }
+
+        //ValueEventListener(mDatabaseReference)
     }
 
     private fun registerNewUser() {
@@ -54,6 +65,16 @@ class RegistrationActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(applicationContext, "Registration successful!", Toast.LENGTH_LONG).show()
+                    val key = FirebaseDatabase.getInstance().getReference().child("data").push().getKey();
+                    Log.wtf(null,uname!!.text.toString())
+                    dataList!!.put("name", uname!!.text.toString())
+                    dataList!!.put("email", emailTV!!.text.toString())
+                    dataList!!.put("password", passwordTV!!.text.toString())
+                    dataList!!.put("phone", phnumber!!.text.toString())
+                    dataList!!.put("bloodGroup", bloodgroup!!.text.toString())
+                    val childUpdate : HashMap<String, HashMap<String,String>> = HashMap()
+                    childUpdate!!.put("/data/"+key , dataList!!);
+                    FirebaseDatabase.getInstance().getReference().updateChildren(childUpdate as Map<String, Any>)
                     progressBar!!.visibility = View.GONE
 
                      val intent = Intent(this@RegistrationActivity, MainActivity::class.java)
@@ -72,5 +93,9 @@ class RegistrationActivity : AppCompatActivity() {
         passwordTV = findViewById(R.id.password)
         regBtn = findViewById(R.id.register)
         progressBar = findViewById(R.id.progressBar)
+        uname = findViewById(R.id.name)
+        phnumber = findViewById(R.id.phone)
+        bloodgroup = findViewById(R.id.bg)
+
     }
 }

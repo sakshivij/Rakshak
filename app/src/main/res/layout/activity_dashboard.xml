@@ -16,6 +16,7 @@
             android:layout_marginTop="568dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recycler_view"/>
 
+
     <!--<TextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
@@ -26,24 +27,37 @@
             android:text="@string/title_home"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
--->
+
 
     <Button
             android:id="@+id/add_contact"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+ADD CONTACT"
             android:layout_gravity="center"
+            ver/>
+-->
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="552dp"
+            tools:layout_editor_absoluteX="161dp" android:id="@+id/sendbutton"
+            android:visibility="gone" android:gravity="center_vertical" tools:ignore="MissingConstraints"/>
 
-            app:layout_constraintTop_toTopOf="@+id/fragment_container" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="36dp"
-            app:layout_constraintHorizontal_bias="0.0"/>
-
+    <android.support.design.widget.FloatingActionButton
+            android:src="@drawable/circle"
+            app:fabSize="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_contact"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp" android:layout_marginBottom="92dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     <android.support.design.widget.BottomNavigationView
             android:id="@+id/nav_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="22dp"
             android:background="?android:attr/windowBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -52,12 +66,21 @@
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
 
             app:layout_constraintBottom_toTopOf="@+id/fragment_container" android:layout_marginTop="26dp"
             android:layout_marginBottom="352dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+
+    <ProgressBar
+            android:id="@+id/progressBarSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+    />
 
 </android.support.constraint.ConstraintLayout>

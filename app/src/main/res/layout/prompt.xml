@@ -5,6 +5,7 @@
               android:layout_height="fill_parent"
               android:orientation="vertical"
               android:padding="10dp" >
+    <requestFocus />
 
     <TextView
             android:id="@+id/nameMessage"
@@ -18,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
-        <requestFocus />
 
     </EditText>
 

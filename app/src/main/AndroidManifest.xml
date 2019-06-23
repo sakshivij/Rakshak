@@ -3,6 +3,9 @@
           package="com.example.rakshak">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
             android:allowBackup="true"
@@ -11,10 +14,15 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
+        <activity
+                android:name=".DashboardTestActivity"
+                android:label="@string/title_activity_dashboard_test"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <!--<activity android:name=".ContactAdapter">
-        </activity>-->
+        <!--
+        <activity android:name=".ContactAdapter">
+        </activity>
+        -->
         <activity
                 android:name=".DashboardActivity"
                 android:label="@string/title_activity_dashboard">
